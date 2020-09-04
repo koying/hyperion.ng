@@ -6,8 +6,12 @@ SET(DEVROOT ${CROSSROOT}/raspberrypi)
 SET(PIROOT ${DEVROOT}/rootfs)
 SET(PITOOLCHAIN ${DEVROOT}/tools)
 
-SET(TOOLROOT ${PITOOLCHAIN}/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf )
-SET(QT_BIN_PATH ${CROSSROOT}/Qt5/5.7/gcc_64/bin)
+SET(TOOLROOT ${PITOOLCHAIN}/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf )
+SET(QT_BIN_PATH ${CROSSROOT}/Qt5/bin)
+
+# QT5
+list(APPEND CMAKE_PREFIX_PATH "${CROSSROOT}/Qt5")
+list(APPEND CMAKE_REQUIRED_LIBRARIES atomic)
 
 # specify the cross compiler
 SET(CMAKE_C_COMPILER   ${TOOLROOT}/bin/arm-linux-gnueabihf-gcc)
