@@ -3,6 +3,10 @@
 SET(CURRENT_HEADER_DIR ${CMAKE_SOURCE_DIR}/include/leddevice)
 SET(CURRENT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/libsrc/leddevice)
 
+# QT5
+list(APPEND CMAKE_PREFIX_PATH "/opt/Qt5.12")
+list(APPEND CMAKE_REQUIRED_LIBRARIES atomic)
+
 find_package(Qt5 COMPONENTS Network SerialPort REQUIRED)
 
 include_directories(
